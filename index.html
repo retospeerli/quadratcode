@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Der 5x5-Code</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="badge">13</div>
+    <h1>Geheime Schriften und Tinten</h1>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div>
+        <h2>Der 5x5-Code</h2>
+        <p>
+          Schreibe eine Botschaft senkrecht in ein Quadrat. Danach liest du die Zeilen waagerecht ab.
+          So entsteht ein Geheimtext. Zum Entschlüsseln wird der Geheimtext wieder waagerecht in dasselbe Quadrat geschrieben.
+          Die Nachricht liest du dann senkrecht in den Spalten.
+        </p>
+      </div>
+      <img src="assets/vorlage-5x5-code.png" alt="Vorlage zum 5x5-Code" />
+    </section>
+
+    <section class="panel settings">
+      <h3>1. Quadrat wählen</h3>
+      <label for="size">Quadratgrösse</label>
+      <select id="size">
+        <option value="5">5 x 5</option>
+        <option value="6">6 x 6</option>
+        <option value="7">7 x 7</option>
+        <option value="8">8 x 8</option>
+        <option value="9">9 x 9</option>
+        <option value="10">10 x 10</option>
+      </select>
+      <p class="hint">Grössere Quadrate erlauben längere Nachrichten. Leere Felder werden automatisch mit Zufallsbuchstaben gefüllt.</p>
+    </section>
+
+    <section class="grid-two">
+      <div class="panel">
+        <h3>2. Verschlüsseln</h3>
+        <label for="plain">Klartext</label>
+        <textarea id="plain" placeholder="Schreibe deine geheime Botschaft hier hinein ...">ACHTUNG FALLE</textarea>
+        <button id="encryptBtn">Verschlüsseln</button>
+      </div>
+
+      <div class="panel">
+        <h3>3. Entschlüsseln</h3>
+        <label for="cipherInput">Geheimtext</label>
+        <textarea id="cipherInput" placeholder="Füge hier den Geheimtext ein ..."></textarea>
+        <button id="decryptBtn">Entschlüsseln</button>
+      </div>
+    </section>
+
+    <section class="panel output">
+      <h3>Ergebnis</h3>
+      <div class="result-row">
+        <div>
+          <label>Geheimtext in 5er-Gruppen</label>
+          <pre id="cipherOut"></pre>
+          <button id="copyCipher">Geheimtext kopieren</button>
+        </div>
+        <div>
+          <label>Entschlüsselte Nachricht</label>
+          <pre id="plainOut"></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h3>Quadrat</h3>
+      <p class="hint" id="gridHint">Beim Verschlüsseln siehst du, wie deine Botschaft senkrecht eingetragen wurde.</p>
+      <div id="square" class="square"></div>
+    </section>
+  </main>
+
+  <footer>© 2009 Speerli · digitale Unterrichtsversion</footer>
+  <script src="script.js"></script>
+</body>
+</html>
